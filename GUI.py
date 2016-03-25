@@ -3,9 +3,9 @@ import math
 
 def whereapoint ():
     try:
-        x_f=float(x.get())
+        x_f=float(x.get()) //получение введенных значение точек
         y_f=float(y.get())
-        if (x_f<0 and y_f<0):
+        if (x_f<0 and y_f<0):    // проверка четверти
             ans = "III"
         elif (x_f<0 and y_f>0):
             ans = "II"
@@ -13,13 +13,13 @@ def whereapoint ():
             ans = "I"
         elif (x_f>0 and y_f<0):
             ans = "IV"
-        canv=Canvas(root,width=100,height=100,bg='white')
+        canv=Canvas(root,width=100,height=100,bg='white') // отрисовка поля
         canv.create_line([0,50],[100,50])
         canv.create_line([50,0],[50,100])
-        canv.create_line([50+x_f,50-y_f],[50,50],fill="red")
-        canv.create_line([50+x_f,50-y_f],[50+x_f,50], fill="blue")
-        canv.create_line([50+x_f,50-y_f],[50,50-y_f], fill="blue")
-        canv.create_text (90,10,text = "I", font="Verdina 8", anchor='w',justify=CENTER,fill="red")
+        canv.create_line([50+x_f,50-y_f],[50,50],fill="red") // линия от точки до центра
+        canv.create_line([50+x_f,50-y_f],[50+x_f,50], fill="blue") // линия от точки до Y
+        canv.create_line([50+x_f,50-y_f],[50,50-y_f], fill="blue") // линия от точки до Х
+        canv.create_text (90,10,text = "I", font="Verdina 8", anchor='w',justify=CENTER,fill="red") // подпись четвертей
         canv.create_text (10,10,text = "II", font="Verdina 8", anchor='w',justify=CENTER,fill="red")
         canv.create_text (10,90,text = "III", font="Verdina 8", anchor='w',justify=CENTER,fill="red")
         canv.create_text (90,90,text = "IV", font="Verdina 8", anchor='w',justify=CENTER,fill="red")
